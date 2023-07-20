@@ -1,21 +1,26 @@
+// export type Product = {
+//   id: string;
+//   name: string;
+//   slug: string;
+//   price: number;
+//   cost: number;
+//   desc: string;
+//   images: { image: string }[];
+//   totalSell: number;
+//   vendor: string;
+//   brand: string;
+//   category: string;
+//   featured: boolean;
+//   variants: string[];
+//   tags: string;
+//   countInStock: number;
+//   review: number;
+//   rating: number;
+// };
+
 export type Product = {
-  id: string;
   name: string;
   slug: string;
-  price: number;
-  cost: number;
-  desc: string;
-  images: { image: string }[];
-  totalSell: number;
-  vendor: string;
-  brand: string;
-  category: string;
-  featured: boolean;
-  variants: string[];
-  tags: string;
-  countInStock: number;
-  review: number;
-  rating: number;
 };
 
 export type User = {
