@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { Product } from "types/RootTypes";
 
 const productSchema = new mongoose.Schema(
   {
@@ -9,9 +10,7 @@ const productSchema = new mongoose.Schema(
     desc: { type: String },
     images: [
       {
-        image: {
-          type: String,
-        },
+        type: String,
       },
     ],
     totalSell: { type: Number, default: 0 },
@@ -43,4 +42,4 @@ productSchema.set("toJSON", {
   virtuals: true,
 });
 
-export default mongoose.model("Product", productSchema);
+export default mongoose.model<Product>("Product", productSchema);

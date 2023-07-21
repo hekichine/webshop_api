@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { Brand } from "types/RootTypes";
 
 const brandSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -17,4 +18,4 @@ brandSchema.set("toJSON", {
   virtuals: true,
 });
 
-export default mongoose.model("Brand", brandSchema);
+export default mongoose.model<Brand>("Brand", brandSchema);

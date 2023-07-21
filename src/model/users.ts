@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { User } from "types/RootTypes";
 
 const userSchema = new mongoose.Schema(
   {
@@ -59,4 +60,4 @@ userSchema.set("toJSON", {
   virtuals: true,
 });
 
-export default mongoose.model("User", userSchema);
+export default mongoose.model<User>("User", userSchema);

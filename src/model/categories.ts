@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { Category } from "types/RootTypes";
 
 const categorySchema = new mongoose.Schema(
   {
@@ -17,4 +18,4 @@ categorySchema.set("toJSON", {
   virtuals: true,
 });
 
-export default mongoose.model("Category", categorySchema);
+export default mongoose.model<Category>("Category", categorySchema);
