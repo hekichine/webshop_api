@@ -12,7 +12,7 @@ const productController = {
         err: 0,
       });
     } else {
-      return res.status(200).json({
+      return res.status(404).json({
         message: "Empty",
         err: 1,
       });

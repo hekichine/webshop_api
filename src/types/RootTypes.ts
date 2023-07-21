@@ -38,6 +38,7 @@ export type Brand = {
   name: string;
   image: string;
   count: number;
+  slug: string;
 };
 
 export type Category = {

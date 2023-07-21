@@ -4,8 +4,8 @@ import { Category } from "types/RootTypes";
 const categorySchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
-    desc: { typs: String, required: true },
-    slug: { type: String },
+    desc: { type: String, required: true },
+    slug: { type: String, unique: true },
   },
   {
     timestamps: true,
