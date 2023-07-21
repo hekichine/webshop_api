@@ -1,56 +1,48 @@
-// export type Product = {
-//   id: string;
-//   name: string;
-//   slug: string;
-//   price: number;
-//   cost: number;
-//   desc: string;
-//   images: { image: string }[];
-//   totalSell: number;
-//   vendor: string;
-//   brand: string;
-//   category: string;
-//   featured: boolean;
-//   variants: string[];
-//   tags: string;
-//   countInStock: number;
-//   review: number;
-//   rating: number;
-// };
-
 export type Product = {
+  id: string;
   name: string;
   slug: string;
+  price: number;
+  cost: number;
+  desc: string;
+  images: { image: string }[];
+  totalSell: number;
+  vendor: User[];
+  brand: Brand[];
+  category: Category[];
+  featured: boolean;
+  variants: string[];
+  tags: string[];
+  countInStock: number;
+  review: number;
+  rating: number;
 };
 
 export type User = {
   id: string;
-  name: string;
-  account: string;
-  password: string;
-  avatar: string;
-  info: {
-    address: string;
-    phone: string;
-  };
+  firstname: string;
+  lastname: string;
+  displayname: string;
   email: string;
-  isAdmin: boolean;
+  username: string;
+  profile_id: string;
+  password: string;
+  phone: string;
+  address: string;
+  shippingaddress: string;
+  image: string;
+  role: number;
+  root: boolean;
 };
 
-export type CartItem = {
-  image: string | undefined;
-  slug: string;
-  quantity: number;
-  countInstock: number;
-  price: number;
-  id: string;
+export type Brand = {
   name: string;
+  image: string;
+  count: number;
 };
 
-export type Cart = {
-  itemsPrice: number;
-  tax: number;
-  totalPrice: number;
-  cartItems: CartItem[];
-  paymentMethod: string;
+export type Category = {
+  name: string;
+  desc: string;
+  slug: string;
 };
