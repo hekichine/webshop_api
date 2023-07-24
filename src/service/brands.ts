@@ -15,5 +15,8 @@ const brandService = {
   update: async (slug: string, brand: Brand): Promise<Brand> => {
     return brands.findByIdAndUpdate({ slug: slug }, brand);
   },
+  findBySlug: async (slug: string): Promise<Brand> => {
+    return brands.findOne({ slug: slug });
+  },
 };
 export default brandService;

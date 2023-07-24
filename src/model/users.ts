@@ -5,12 +5,15 @@ const userSchema = new mongoose.Schema(
   {
     firstname: {
       type: String,
+      default: "Anonymous",
     },
     lastname: {
       type: String,
+      default: "User",
     },
     displayname: {
       type: String,
+      default: "Anonymous",
     },
     email: {
       type: String,
@@ -21,22 +24,26 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    profile_id: { type: String, required: true, unique: true },
+    profile_id: { type: String, unique: true },
     password: {
       type: String,
       required: true,
     },
     phone: {
       type: String,
+      default: "+84 321-321-321",
     },
     address: {
       type: String,
+      default: "Hidden info",
     },
     shippingaddress: {
       type: String,
+      default: "Hidden info",
     },
     image: {
       type: String,
+      default: "",
     },
     role: {
       type: Number,
@@ -45,7 +52,6 @@ const userSchema = new mongoose.Schema(
     },
     root: {
       type: Boolean,
-      required: true,
       default: false,
     },
   },

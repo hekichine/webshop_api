@@ -20,7 +20,7 @@ const productRoutes = (app: any) => {
   // delete
   router.delete("/:slug", productController.delete);
 
-  app.use(`${api_url}/products`, router);
+  app.use(`${api_url}/product`, router);
 };
 
 export default productRoutes;
