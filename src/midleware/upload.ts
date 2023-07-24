@@ -1,6 +1,6 @@
 import multer from "multer";
 
-const FILE_TYPE_MAP: {} = {
+const FILE_TYPE_MAP: any = {
   "image/png": "png",
   "image/jpg": "jpg",
   "image/jpeg": "jpeg",
