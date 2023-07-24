@@ -25,8 +25,15 @@ const userController = {
   },
   create: async (req: Request, res: Response) => {
     try {
-      let user: User = req.body;
-
+      let image_url = `${req.protocol}://${req.get(
+        "host"
+      )}/uploads/req.file?.filename`;
+      let user: User = {
+        ...req.body,
+        image: image_url,
+      };
+      console.log(user);
+      return;
       let new_user = userService.create(user);
       if (new_user != null) {
         return res.status(200).json({
