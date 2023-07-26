@@ -76,7 +76,10 @@ const userController = {
   },
   update: async (req: Request, res: Response) => {
     try {
-      let user: User = req.body;
+      let image_url = `${req.protocol}://${req.get("host")}/uploads/${
+        req.file?.filename
+      }`;
+      let user: User = { ...req.body, image: image_url };
       let profile_id = req.params.profile_id;
 
       let update_user = await userService.update(profile_id, user);

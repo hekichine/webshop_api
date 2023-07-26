@@ -3,7 +3,7 @@ import { Category } from "../types/RootTypes";
 
 const categoryService = {
   getAll: async (): Promise<Category[]> => {
-    return categories.find();
+    return await categories.find();
   },
   create: async (category: Category): Promise<Category> => {
     let find_cate = await categories.find({ slug: category.slug });
@@ -11,16 +11,16 @@ const categoryService = {
       return null;
     }
     let new_cate = new categories(category);
-    return new_cate.save();
+    return await new_cate.save();
   },
   findBySlug: async (slug: string): Promise<Category> => {
-    return categories.findOne({ slug: slug });
+    return await categories.findOne({ slug: slug });
   },
   update: async (slug: string, category: Category): Promise<Category> => {
-    return categories.findOneAndUpdate({ slug: slug }, category);
+    return await categories.findOneAndUpdate({ slug: slug }, category);
   },
   delete: async (slug: string): Promise<Category> => {
-    return categories.findOneAndDelete({ slug: slug });
+    return await categories.findOneAndDelete({ slug: slug });
   },
 };
 

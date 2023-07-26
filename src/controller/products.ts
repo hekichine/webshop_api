@@ -19,7 +19,19 @@ const productController = {
     }
   },
   create: async (req: Request, res: Response) => {
-    let product: Product = req.body;
+    let imagesPaths: any = [];
+    let files: any = req.files;
+    if (files) {
+      files.map((file: any) => {
+        imagesPaths.push(
+          `${req.protocol}://${req.get("host")}/uploads/${file?.filename}`
+        );
+      });
+    }
+    let product: Product = {
+      ...req.body,
+      images: imagesPaths,
+    };
     try {
       let create_product = await productService.create(product);
 
