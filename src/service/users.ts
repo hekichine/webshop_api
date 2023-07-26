@@ -4,25 +4,24 @@ import { User } from "../types/RootTypes";
 
 const userService = {
   getAll: async (): Promise<User[]> => {
-    return users.find();
+    return await users.find();
   },
   create: async (user: User): Promise<User> => {
-    let new_username = users.findOne({ username: user.username });
-
-    if (new_username !== null) {
+    let new_username = await users.findOne({ username: user.username });
+    if (new_username) {
       return null;
     }
     let new_user = new users(user);
-    return new_user.save();
+    return await new_user.save();
   },
   findById: async (profile_id: string): Promise<User> => {
-    return users.findOne({ profile_id: profile_id });
+    return await users.findOne({ profile_id: profile_id });
   },
   update: async (profile_id: string, user: User): Promise<User> => {
-    return users.findOneAndUpdate({ profile_id: profile_id }, user);
+    return await users.findOneAndUpdate({ profile_id: profile_id }, user);
   },
   delete: async (profile_id: string): Promise<User> => {
-    return users.findOneAndDelete({
+    return await users.findOneAndDelete({
       profile_id: profile_id,
     });
   },
